@@ -15,17 +15,16 @@ import sys
 # Just read file and return output to 'file_out'
 
 def ReadFile(file):
-
-  # Create array to hold file info
-  file_out = []
+  
+  file_out = []                                  # Create array to hold file info
 
   fo = open(file, 'r')
   file_read = fo.readlines()
   for line in file_read:
-    if line.startswith('#'):
+    if line.startswith('#'):                     # If line starts with comment (#) then skip that line 
       continue
     else:
-      file_out.append(line)
+      file_out.append(line)                      # If line has no comment (#) then append to file_out array
     fo.close()
 
   return file_out
